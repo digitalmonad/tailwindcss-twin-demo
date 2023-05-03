@@ -2,7 +2,6 @@ import { PropsWithChildren } from 'react';
 import {
   Tooltip as RadixTooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
   Arrow,
 } from '@radix-ui/react-tooltip';
@@ -23,14 +22,12 @@ export const Tooltip = ({
   content,
 }: PropsWithChildren<TTooltipProps>) => {
   return (
-    <TooltipProvider delayDuration={0}>
-      <RadixTooltip>
-        <TooltipTrigger asChild>{children}</TooltipTrigger>
-        <TooltipContent side={position}>
-          <StyledArrow />
-          <ContentWrapper>{content}</ContentWrapper>
-        </TooltipContent>
-      </RadixTooltip>
-    </TooltipProvider>
+    <RadixTooltip>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
+      <TooltipContent side={position}>
+        <StyledArrow />
+        <ContentWrapper>{content}</ContentWrapper>
+      </TooltipContent>
+    </RadixTooltip>
   );
 };
