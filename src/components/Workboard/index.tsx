@@ -28,7 +28,7 @@ const minimapStyle = {
 const onInit = (reactFlowInstance) =>
   console.log('flow loaded:', reactFlowInstance);
 
-const OverviewFlow = () => {
+export const Workboard = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const onConnect = useCallback(
@@ -67,5 +67,3 @@ const OverviewFlow = () => {
     </ReactFlow>
   );
 };
-
-export default OverviewFlow;
